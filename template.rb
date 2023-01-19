@@ -6,7 +6,9 @@ git commit: "-a -m 'Initial commit'"
 
 gem_group :development, :test do
 
-  # Use RSpec for unittests instead of minitest
+  # Use RSpec for unittests instead of minitest. Minitest is like driving a
+  # Formula 1 car. Whereas RSpec has quality of life improvements to feel
+  # like driving a Ferrari.
   gem "rspec-rails"
 
   # A library for generating fake data such as names, addresses, and phone numbers.
@@ -22,7 +24,8 @@ gem_group :development, :test do
   # https://brakemanscanner.org/docs/introduction/
   gem "brakeman"
 
-  # Standardize ruby formatting https://github.com/testdouble/standard
+  # Standardize ruby formatting https://github.com/testdouble/standard.
+  # Prefer a simpler set of ruby linting rules that are easy to follow.
   gem "standard"
 end
 
@@ -46,3 +49,8 @@ after_bundle do
   git add: '.'
   git commit: "-a -m 'Generate binstubs, lint ruby'"
 end
+
+say <<-EOS
+  ============================================================================
+  Your app is now available.
+EOS
