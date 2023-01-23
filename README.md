@@ -1,7 +1,7 @@
 The Unofficial MH Rails Template
 ===
 
-This is the starting point of your rails application. Use [Rails Application Templates](https://guides.rubyonrails.org/rails_application_templates.html) to kickstart your app with the most common elements of a Mutually Human Rails app. After boot, it should not be necessary to run any other configuration or setup for the gems included here.
+This is the starting point of your Rails application. Use [Rails Application Templates](https://guides.rubyonrails.org/rails_application_templates.html) to kickstart your app with the most common elements of a Mutually Human Rails app. After boot, it should not be necessary to run any other configuration or setup for the gems included here.
 
 The commands that were run and the gems included were guided by these priorities:
 
@@ -20,7 +20,7 @@ I don’t trust app engines. I always think they add BS I don’t need. All the 
 The goal of this repo is not to install Ruby or Rails. That would encompass too much. Follow the "does one thing and does it well" axiom.
 
 # Usage
-Making sure you already have ruby and rails installed-
+Making sure you already have Ruby and Rails installed-
 ```
 rails new <app_name> -m "https://raw.githubusercontent.com/mhs/Unofficial-Rails-Template/main/template.rb?token=GHSAT0AAAAAABY6MJEXUZVGG3SCOVJDMA7KY6JW6KA"
 ```

@@ -24,7 +24,7 @@ gem_group :development, :test do
   # https://brakemanscanner.org/docs/introduction/
   gem "brakeman"
 
-  # Standardize ruby formatting https://github.com/testdouble/standard.
+  # Standardize Ruby formatting https://github.com/testdouble/standard.
   # Prefer a simpler set of ruby linting rules that are easy to follow.
   gem "standard"
 end
@@ -44,7 +44,7 @@ EOF
 
 # Use Github Actions for CI as a default. This creates 3 jobs:
 # One to run the unittest suite, the brakeman security scanner,
-# and the standardrb ruby linter. Feel free to add more jobs.
+# and the standardrb Ruby linter. Feel free to add more jobs.
 create_file ".github/workflows/default_workflow.yml", <<~EOF
 name: Default Workflow
 on: [push, pull_request]
@@ -82,12 +82,12 @@ run "bundle lock --add-platform x86_64-linux"
 # [OPTIONAL] Add arm64 to Gemfile.lock for M1 apple silicon macs.
 run "bundle lock --add-platform arm64-darwin-21"
 
-# Auto fix common formatting violations of a greenfield rails app
+# Auto fix common formatting violations of a greenfield Rails app
 run "bundle exec standardrb --fix"
 
 after_bundle do
   git add: '.'
-  git commit: "-a -m 'Generate binstubs, lint ruby'"
+  git commit: "-a -m 'Generate binstubs and lint Ruby'"
 
   say <<-EOS
 
