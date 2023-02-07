@@ -45,7 +45,7 @@ EOF
 # Use Github Actions for CI as a default. This creates 3 jobs:
 # One to run the unittest suite, the brakeman security scanner,
 # and the standardrb Ruby linter. Feel free to add more jobs.
-create_file ".github/workflows/default_workflow.yml", <<~EOF
+create_file ".github/workflows/ci.yml", <<~EOF
 name: Continuous Integration
 on: [push, pull_request]
 jobs:
