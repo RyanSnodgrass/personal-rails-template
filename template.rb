@@ -27,6 +27,9 @@ gem_group :development, :test do
   # Standardize Ruby formatting https://github.com/testdouble/standard.
   # Prefer a simpler set of ruby linting rules that are easy to follow.
   gem "standard"
+
+  # Report n+1 queries. https://github.com/flyerhzm/bullet
+  gem "bullet"
 end
 
 # Generate needed boilerplate rspec configuration files
@@ -47,7 +50,7 @@ EOF
 # and the standardrb Ruby linter. Feel free to add more jobs.
 create_file ".github/workflows/ci.yml", <<~EOF
 name: Continuous Integration
-on: [push, pull_request]
+on: [push]
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
@@ -84,6 +87,11 @@ run "bundle lock --add-platform arm64-darwin-21"
 
 # Auto fix common formatting violations of a greenfield Rails app
 run "bundle exec standardrb --fix"
+
+# Auto generate the default configuration for Bullet.
+# Answer YES to installing in the test environment
+run "echo '########### Say Yes to enabling Bullet in Test ############'"
+rails_command "generate bullet:install"
 
 after_bundle do
   git add: '.'
